@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :find_cocktail, only: [ :show]
+  before_action :find_cocktail, only: [:show]
 
   def index
     @cocktails = Cocktail.all
@@ -9,7 +9,7 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.new
+    @cocktail = Cocktail.new
   end
 
   def create
@@ -31,4 +31,5 @@ class CocktailsController < ApplicationController
   def review_params
     params.require(:cocktail).permit(:name)
   end
+
 end

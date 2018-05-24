@@ -22,6 +22,7 @@ class DosesController < ApplicationController
     # byebug
     dose = Dose.find(params[:id])
     dose.destroy
+    redirect_to request.referrer
   end
 
   private

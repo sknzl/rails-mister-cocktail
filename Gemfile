@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.4'
 # Gemfile
+gem 'rest-client'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'

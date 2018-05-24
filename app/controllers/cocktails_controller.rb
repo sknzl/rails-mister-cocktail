@@ -2,7 +2,9 @@ class CocktailsController < ApplicationController
   before_action :find_cocktail, only: [:show]
 
   def index
-    @cocktails = Cocktail.all
+    filter= "'%#{params[:search]}%'"
+    @filter_form = params[:search]
+    @cocktails = Cocktail.where("name LIKE #{filter}")
   end
 
   def show

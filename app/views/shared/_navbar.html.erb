@@ -1,0 +1,16 @@
+ <div class="navbar-wagon">
+    <!-- Logo -->
+     <%=link_to "Cocktails", cocktails_path, :class => "navbar-wagon-brand" %>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <form class="form-inline" action="/cocktails" method="get">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="search" class="form-control" name="search" value=<%= @filter_form %>>
+    <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <%=link_to "New Cocktail", new_cocktail_path, :class => "btn btn-warning", :id => "new-cocktail" %>
+    </div>
+  </div>

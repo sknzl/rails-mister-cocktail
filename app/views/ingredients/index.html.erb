@@ -1,0 +1,14 @@
+<h3> Available ingredients</h3>
+<%=link_to "Add new ingredient", new_ingredient_path,:class => "btn btn-primary"%>
+
+<ul class="list-unstyled">
+  <%@ingredients.each do |ingredient| %>
+
+  <li>
+    <%=ingredient.name%>
+    <%=link_to ingredient_path(ingredient), :method => :delete do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
+  </li>
+  <% end %>
+</ul>

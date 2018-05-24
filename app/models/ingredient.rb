@@ -8,7 +8,7 @@ class Ingredient < ApplicationRecord
   private
 
   def check_for_cocktail
-    unless self.doses.count > 0
+    if self.doses.count > 0
       raise CustomException.new("Cannot delete while used by cocktail.")
     end
   end

@@ -2,7 +2,7 @@
   <% if cocktail.photo? %>
   <%= cl_image_tag cocktail.photo.url(:thumnail) %>
   <% else %>
-   <%= cl_image_tag("ccdetbkyfmcduo2q0vg8.jpg", :height=>128, :width=>256, :crop=>"fit") %>
+   <%= cl_image_tag("ccdetbkyfmcduo2q0vg8.jpg", :height=>128, :width=>256, :crop=>"pad") %>
   <%end%>
   <div class="container-card">
     <h4><b><%=cocktail.name%></b></h4>

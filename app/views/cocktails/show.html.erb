@@ -3,7 +3,7 @@
 <% if @cocktail.photo? %>
   <%= cl_image_tag @cocktail.photo.url(:original) %>
   <% else %>
-   <%= cl_image_tag("ccdetbkyfmcduo2q0vg8.jpg", :height=>256, :width=>512, :crop=>"fit") %>
+   <%= cl_image_tag("ccdetbkyfmcduo2q0vg8.jpg", :height=>256, :width=>512, :crop=>"pad") %>
 <%end%>
 <h3>Incredients:</h3>
 <ul class="list-unstyled">

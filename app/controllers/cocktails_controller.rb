@@ -4,8 +4,7 @@ class CocktailsController < ApplicationController
   def index
     filter= "'%#{params[:search]}%'"
     @filter_form = params[:search]
-    # @cocktails = Cocktail.where("name ILIKE #{filter}")
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.where("name ILIKE #{filter}")
   end
 
   def show

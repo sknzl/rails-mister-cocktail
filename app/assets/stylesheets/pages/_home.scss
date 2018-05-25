@@ -25,3 +25,14 @@ li{
   margin-left: auto;
   padding-left: 15%;
 }
+
+.flexbox-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.image-show {
+  img {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+}

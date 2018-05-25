@@ -1,5 +1,5 @@
-<div class="flexbox-container-desktop hidden-xs hidden-sm">
-  <div class="cocktail-description">
+<div class="row">
+  <div class="col-md-6">
     <h3> Cocktail Name: </h3>
     <p><%= @cocktail.name %> </p>
     <div class="image-show">
@@ -10,7 +10,7 @@
     <%end%>
     </div>
   </div>
-  <div class="cocktail-ingredients">
+  <div class="col-md-6">
     <h3>Incredients:</h3>
     <ul class="list-unstyled">
       <%@cocktail.doses.each do |dose|%>
@@ -28,35 +28,3 @@
     </ul>
   </div>
 </div>
-
-<div class="flexbox-container-mobile hidden-md hidden-lg">
-  <div class="cocktail-description">
-    <h3> Cocktail Name: </h3>
-    <p><%= @cocktail.name %> </p>
-    <div class="image-show">
-    <% if @cocktail.photo? %>
-      <%= cl_image_tag @cocktail.photo.url(:original)%>
-      <% else %>
-       <%= cl_image_tag("ccdetbkyfmcduo2q0vg8.jpg", :height=>256, :width=>512, :crop=>"fit") %>
-    <%end%>
-    </div>
-  </div>
-  <div class="cocktail-ingredients">
-    <h3>Incredients:</h3>
-    <ul class="list-unstyled">
-      <%@cocktail.doses.each do |dose|%>
-        <li><%=dose.description%> <%=dose.ingredient.name%>
-          <%=link_to dose_path(dose), :method => :delete do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
-        </li>
-      <%end%>
-    </ul>
-
-    <ul class="list-unstyled">
-    <li><%=link_to "Add new ingredient", new_cocktail_dose_path(@cocktail),:class => "btn btn-primary"%></li>
-    <li><%=link_to "Delete Cocktail", cocktail_path(@cocktail), :method => :delete ,:class => "btn btn-warning", :id => "delete-cocktail"%></li>
-    </ul>
-  </div>
-</div>
-
